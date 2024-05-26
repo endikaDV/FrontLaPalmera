@@ -55,7 +55,7 @@ export class ManageCategoryComponent implements OnInit {
   handleAddAction(){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = {
-      action: 'Añadir'
+      action: 'Add'
     };
     dialogConfig.width = "850px";
     const dialogRef = this.dialog.open(CategoryComponent, dialogConfig);
@@ -70,7 +70,7 @@ export class ManageCategoryComponent implements OnInit {
   handleEditAction(values:any){
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = {
-      action: 'Editar',
+      action: 'Edit',
       data:values
     };
     dialogConfig.width = "850px";

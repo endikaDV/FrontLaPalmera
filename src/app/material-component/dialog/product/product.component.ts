@@ -17,7 +17,7 @@ export class ProductComponent implements OnInit {
   onEditProduct = new EventEmitter();
   productForm:any = FormGroup;
   dialogAction:any = "Add";
-  action:any = "Add";
+  action:any = "Añadir";
   responseMessage:any;
   categorys:any = [];
 
@@ -38,7 +38,7 @@ export class ProductComponent implements OnInit {
 
     if(this.dialogData.action === "Edit"){
       this.dialogAction = "Edit";
-      this.action = "Update";
+      this.action = "Actualizar";
       this.productForm.patchValue(this.dialogData.data);
     }
     this.getCategorys();

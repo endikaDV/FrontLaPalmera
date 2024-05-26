@@ -30,14 +30,14 @@ export class CategoryComponent implements OnInit {
       name:[null,[Validators.required]]
     });
     if(this.dialogData.action === 'Edit'){
-      this.dialogAction = "Actualizar";
+      this.dialogAction = "Edit";
       this.action = "Actualizar";
       this.categoryForm.patchValue(this.dialogData.data);
     }
   }
 
   handleSubmit(){
-    if(this.dialogAction === "Actualizar"){
+    if(this.dialogAction === "Edit"){
       this.edit();
     }
     else{
