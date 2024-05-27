@@ -54,17 +54,20 @@ export class ViewBillComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
-  handleViewAction(values:any){
+  handleViewAction(values: any) {
     const dialogConfig = new MatDialogConfig();
     dialogConfig.data = {
-      data:values
-    }
+      data: values
+    };
     dialogConfig.width = "100%";
-    const dialogRef = this.dialog.open(ViewBillProductsComponent,dialogConfig);
-    this.router.events.subscribe(() =>{
+    const dialogRef = this.dialog.open(ViewBillProductsComponent, dialogConfig);
+  
+    const routerSubscription = this.router.events.subscribe(() => {
       dialogRef.close();
-    })
+      routerSubscription.unsubscribe(); // Desuscribirse después de cerrar el diálogo
+    });
   }
+  
 
   handleDeleteAction(values:any){
     const dialogConfig = new MatDialogConfig();
